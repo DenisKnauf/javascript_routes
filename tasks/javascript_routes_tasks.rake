@@ -1,4 +1,8 @@
-require File.join(RAILS_ROOT, 'config', 'environment')
+begin
+  require File.join(RAILS_ROOT, 'config', 'environment')
+rescue Exception
+  puts "Could not load environment. Existing environment load"
+end
 require File.join(File.dirname(__FILE__), '..', 'lib', 'javascript_routes')
 require File.join(File.dirname(__FILE__), '..', 'bin', 'jsmin')
 
